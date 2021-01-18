@@ -1,8 +1,10 @@
 <div class="tableContainer">
     <div class="success"></div>
     <div style="overflow: auto">
-        <form accept-charset="utf-8" enctype="multipart/form-data" method="post" action="<?= base_url() . 'form/edit_form_result_ajax'; ?>" id='form_edit'>
-            <table cellspacing="0" cellpadding="0" id="application-listing-listview" class="display">
+        <form accept-charset="utf-8" enctype="multipart/form-data" method="post" action="
+        <?= base_url() . 'form/edit_form_result_ajax'; ?>" id='form_edit'>
+            <table cellspacing="0" cellpadding="0" id="application-listing-listview"
+             class="display">
                 <thead>
                     <tr>
                         <?php
@@ -96,7 +98,9 @@
                                                             echo 'Pending';
                                                         }
                                                         ?></span>
-                                                    <select id="edit_activity_status_input_<?php echo $form_item['actions']; ?>" class="intxt2 edit_activity_status_box" style="display: none;width: 100%;">
+                                                    <select id="edit_activity_status_input_<?php echo $form_item['actions']; ?>"
+                                                     class="intxt2 edit_activity_status_box"
+                                                     style="display: none;width: 100%;">
                                                         <option <?php
                                                         if ($form_item['activity_status'] == '') {
                                                             echo 'selected';
@@ -158,24 +162,39 @@
                                             } elseif ($headings[$i] == 'actions') {
                                                 if ($this->acl->hasSuperAdmin()) {
                                                     ?>
-                                                    <img src="<?= base_url() ?>assets/images/tableLink3.png" alt=""  title='Delete' form_id = '<?php echo $form_item['form_id']; ?>' class='delete_icon'/>
-                                         <a class="edit_color_box" form_id = '<?php echo $form_item['form_id']; ?>' href="<?= base_url() . 'form/edit_form_partial'; ?>">
-                                                        <img src="<?= base_url() ?>assets/images/tableLink1.png" alt=""  title='Update' class='update_icosn'/>
+                                                    <img src="<?= base_url() ?>assets/images/tableLink3.png"
+                                                     alt=""  title='Delete' 
+                                                     form_id ='<?php echo $form_item['form_id']; ?>'
+                                                     class='delete_icon'/>
+                                         <a class="edit_color_box" form_id = '<?php echo $form_item['form_id']; ?>' 
+                                         href="<?= base_url() . 'form/edit_form_partial'; ?>">
+                                                        <img src="<?= base_url() ?>
+                                                        assets/images/tableLink1.png" alt="" 
+                                                         title='Update' class='update_icosn'/>
                                                     </a>
                                                     <?php
                                                 } else {
                                                     if ($this->acl->hasPermission('form', 'delete')) {
                                                         ?>
-                                                        <img src="<?= base_url() ?>assets/images/tableLink3.png" alt=""  title='Delete' form_id = '<?php echo $form_item['form_id']; ?>' class='delete_icon'/>
-                                          <a class="edit_color_box" form_id = '<?php echo $form_item['form_id']; ?>' href="<?= base_url() . 'form/edit_form_partial'; ?>">
-                                                            <img src="<?= base_url() ?>assets/images/tableLink1.png" alt=""  title='Update' class='update_icosn'/>
+                                                        <img src="<?= base_url() ?>assets/images/tableLink3.png" 
+                                                        alt=""  title='Delete' 
+                                                        form_id = '<?php echo $form_item['form_id']; ?>'
+                                                         class='delete_icon'/>
+                                          <a class="edit_color_box" 
+                                          form_id = '<?php echo $form_item['form_id']; ?>' 
+                                          href="<?= base_url() . 'form/edit_form_partial'; ?>">
+                                                            <img src="<?= base_url() ?>assets/images/tableLink1.png" 
+                                                            alt=""  title='Update' class='update_icosn'/>
                                                         </a>
                                                         <?php
                                                     }
                                                 }
                                                 ?>
 <!--                                                &nbsp;&nbsp;-->
-                                                <a href="<?= base_url() . 'single-record-map/' . $form_item['form_id'] . '-' . $form_item['actions']; ?>" target="_blank" >
+                                                <a href="<?= base_url() . 'single-record-map/'
+                                                 . $form_item['form_id'] . '-' 
+                                                 . $form_item['actions']; ?>
+                                                " target="_blank" >
                                                     <img src="<?= base_url() ?>assets/images/viewmap.png" alt=""  title='Map View'/>
                                                 </a>
 
@@ -188,7 +207,10 @@
 //                                                $data = ($headings[$i] != "Description") ? $form_item[$headings[$i]] : strtoupper($form_item[$headings[$i]]);
                                                 if($form_item[$headings[$i]]=="SHOW RECORDS"){
                                                 ?>
-                                                    <a rel="<?php echo "zform_".$form_item['form_id']."_".strtolower($headings[$i])."_".$form_item['actions'];  ?>" href="javascript:void(0)"  name = " ITU Government of Punjab - Pakistan" class="open_subtable">
+                                                    <a rel="<?php echo "zform_".$form_item['form_id'].
+                                                    "_".strtolower($headings[$i])."_".$form_item['actions'];  ?>
+                                                    " href="javascript:void(0)"  name = " ITU Government of Punjab - Pakistan" 
+                                                    class="open_subtable">
                                                         <?php echo "<b style='color:orange'>".$form_item[$headings[$i]]."</b>"; ?>
                                                     </a>
                                                 <?php
