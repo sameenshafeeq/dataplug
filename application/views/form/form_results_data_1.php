@@ -81,8 +81,12 @@
                                         if($headings[$i]=='activity_status'){
                                             //echo $form_item['actions'].'Pending';
                                             ?>
-                                                <div class="status edit_activity_status" id="<?php echo $form_item['actions']; ?>" form_id="<?php echo $form_item['form_id']; ?>">
-                                                    <span id="edit_activity_status_<?php echo $form_item['actions']; ?>" class="text_activity_status"><?php
+                                                <div class="status edit_activity_status" 
+                                                id="<?php echo $form_item['actions']; ?>"
+                                                    form_id=" <?php echo $form_item['form_id']; ?>">
+                                                    <span id="edit_activity_status_<
+                                                        ?php echo $form_item['actions']; ?>"
+                                                         class="text_activity_status"><?php
                                                         if ($form_item['activity_status'] == 'approved') {
                                                             echo 'Approved';
                                                         } else if ($form_item['activity_status'] == 'rejected') {
