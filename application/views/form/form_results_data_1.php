@@ -75,7 +75,8 @@
                                         $padding = '0px ' . strlen($headings[$i]) . 'px' . ' 0px ' . strlen($headings[$i]) * 2 . 'px';
                                     }
                                     ?>
-                                    <td class="Category <?php echo $leftaligh; ?>" style="position:relative; padding: <?php echo $padding; ?> ;" >
+                                    <td class="Category <?php echo $leftaligh; ?>
+                                    " style="position:relative; padding: <?php echo $padding; ?> ;" >
                                         <?php
                                         if($headings[$i]=='activity_status'){
                                             //echo $form_item['actions'].'Pending';
