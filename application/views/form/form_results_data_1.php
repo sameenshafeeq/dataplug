@@ -129,7 +129,9 @@
                                                     $title = $form_item[$headings[$i]][0]['title'];
                                                 }
                                                 ?>
-                                                <a href="<?php echo $form_item[$headings[$i]][0]['image']; ?>" rel="lightbox['<?php echo $image_colorbox; ?>']" title='<b><?php echo $title; ?></b>'>
+                                                <a href="<?php echo $form_item[$headings[$i]][0]['image']; ?>"
+                                                 rel="lightbox['<?php echo $image_colorbox; ?>']" 
+                                                 title='<b><?php echo $title; ?></b>'>
                                                     <img align="left" src="<?php echo $form_item[$headings[$i]][0]['image']; ?>" width="50" height="50" alt="Record Images" title="<b>Record Images</b>" />
                                                 </a>
                                                 <?php
