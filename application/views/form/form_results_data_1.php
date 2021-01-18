@@ -28,7 +28,8 @@
 //                            print_r($new_headings);die;
                             foreach ($headings as $heading):
                                 if ($heading != 'is_take_picture'):
-                                    if($heading == 'activity_status' && $app_general_setting->activity_status_change==0){
+                                    if($heading == 'activity_status' && 
+                                    $app_general_setting->activity_status_change==0){
                                         continue;
                                     }
                                     ?>
