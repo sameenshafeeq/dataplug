@@ -148,7 +148,10 @@
                                                         echo $title_multi = $multi_image['title'];
                                                     }
                                                     ?>
-                                                    <a rel="lightbox['<?php echo $image_colorbox; ?>']" href="<?php echo $multi_image['image']; ?>" title="<b><?php echo $title_multi; ?></b>" name = " ITU Government of Punjab - Pakistan">
+                                                    <a rel="lightbox['<?php echo $image_colorbox; ?>']" 
+                                                    href="<?php echo $multi_image['image']; ?>"
+                                                    title="<b><?php echo $title_multi; ?> </b>"
+                                                    name = " ITU Government of Punjab - Pakistan">
                                                     </a>
                                                     <?php
                                                 }
