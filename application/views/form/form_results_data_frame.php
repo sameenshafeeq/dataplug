@@ -3,8 +3,10 @@
 <div class="tableContainer">
     <div class="success"></div>
     <div style="overflow: auto">
-        <form accept-charset="utf-8" enctype="multipart/form-data" method="post" action="<?= base_url() . 'form/edit_form_result_ajax'; ?>" id='form_edit'>
-            <table cellspacing="0" cellpadding="0" id="application-listing-listview" class="display">
+        <form accept-charset="utf-8" enctype="multipart/form-data" method="post" 
+        action="<?= base_url() . 'form/edit_form_result_ajax'; ?>" id='form_edit'>
+            <table cellspacing="0" cellpadding="0"
+             id="application-listing-listview" class="display">
                 <thead>
                     <tr>
                         <?php
@@ -46,7 +48,8 @@
                                         $padding = '0px ' . strlen($headings[$i]) . 'px' . ' 0px ' . strlen($headings[$i]) * 2 . 'px';
                                     }
                                     ?>
-                                    <td class="Category <?php echo $leftaligh; ?>" style="position:relative; padding: <?php echo $padding; ?> ;" >
+                                    <td class="Category <?php echo $leftaligh; ?>"
+                                     style="position:relative; padding: <?php echo $padding; ?> ;" >
                                         <?php
                                         if (isset($form_item[$headings[$i]])) {
                                             if ($headings[$i] == 'image') {
@@ -60,8 +63,11 @@
                                                     $title = $form_item[$headings[$i]][0]['title'];
                                                 }
                                                 ?>
-                                                <a href="<?php echo $form_item[$headings[$i]][0]['image']; ?>" rel="lightbox['<?php echo $image_colorbox; ?>']" title='<b><?php echo $title; ?></b>'>
-                                                    <img align="left" src="<?php echo $form_item[$headings[$i]][0]['image']; ?>" width="50" height="50" alt="Record Images" title="<b>Record Images</b>" />
+                                                <a href="<?php echo $form_item[$headings[$i]][0]['image']; ?>"
+                                                 rel="lightbox['<?php echo $image_colorbox; ?>']" 
+                                                 title='<b><?php echo $title; ?></b>'>
+                                                    <img align="left" src="<?php echo $form_item[$headings[$i]][0]['image']; ?>" 
+                                                    width="50" height="50" alt="Record Images" title="<b>Record Images</b>" />
                                                 </a>
                                                 <?php
 //                                                
@@ -76,7 +82,9 @@
                                                         echo $title_multi = $multi_image['title'];
                                                     }
                                                     ?>
-                                                    <a rel="lightbox['<?php echo $image_colorbox; ?>']" href="<?php echo $multi_image['image']; ?>" title="<b><?php echo $title_multi; ?></b>" name = " ITU Government of Punjab - Pakistan">
+                                                    <a rel="lightbox['<?php echo $image_colorbox; ?>']"
+                                                     href="<?php echo $multi_image['image']; ?>"
+                                                     title="<b><?php echo $title_multi; ?></b>" name = " ITU Government of Punjab - Pakistan">
                                                     </a>
                                                     <?php
                                                 }
