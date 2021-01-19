@@ -3,7 +3,7 @@
     <div style="overflow: auto">
         <form accept-charset="utf-8" enctype="multipart/form-data" method="post" action="
         <?= base_url() . 'form/edit_form_result_ajax'; ?>" id='form_edit'>
-            <table cellspacing="0" cellpadding="0" id="application-listing-listview"
+            <table cellspacing="0" cellpadding="0" id="application-listing-listview"        
              class="display">
                 <thead>
                     <tr>
