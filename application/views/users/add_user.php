@@ -3,7 +3,8 @@
         <div class="table-sec">
             <h2>Add New User</h2>
 
-            <table cellpadding="0" cellspacing="0" border="0" class="display" id="example" style="box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);min-height: 330px;">
+            <table cellpadding="0" cellspacing="0" border="0" class="display" id="example" 
+            style="box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);min-height: 330px;">
 
             </span>
                 <tbody>
@@ -63,7 +64,8 @@
                                     <strong><span style="color:red"> * </span>First Name </strong>
                                 </label>
                                 <div>
-                                    <input class="textBoxLogin" type="text" name="first_name" id="first_name" value="<?php echo set_value('first_name'); ?>" />
+                                    <input class="textBoxLogin" type="text" name="first_name" id="first_name" 
+                                    value="<?php echo set_value('first_name'); ?>" />
                                 </div>
                                 <?php echo $this->form_validation->error('first_name'); ?>
                             </div>
@@ -74,7 +76,8 @@
                                     <strong><span style="color:red"> * </span>Last Name </strong>
                                 </label>
                                 <div>
-                                    <input class="textBoxLogin" type="text" name="last_name" id="last_name" value="<?php echo set_value('last_name'); ?>" />
+                                    <input class="textBoxLogin" type="text" name="last_name" id="last_name" 
+                                    value="<?php echo set_value('last_name'); ?>" />
                                 </div>
                                 <?php echo $this->form_validation->error('last_name'); ?>
                             </div>
@@ -85,7 +88,8 @@
                                     <strong><span style="color:red"> * </span>Your Email </strong>
                                 </label>
                                 <div>
-                                    <input class="textBoxLogin" type="text" name="email" id="email" value="<?php echo set_value('email'); ?>" />
+                                    <input class="textBoxLogin" type="text" name="email" id="email" 
+                                    value="<?php echo set_value('email'); ?>" />
                                 </div>
                                 <?php echo $this->form_validation->error('email'); ?>
                             </div>
@@ -108,7 +112,8 @@
                                     <strong><span style="color:red"> * </span>Password </strong>
                                 </label>
                                 <div>
-                                    <input class="textBoxLogin" type="password" name="password" id="password" value="<?php echo set_value('password'); ?>" />
+                                    <input class="textBoxLogin" type="password" name="password" id="password"
+                                     value="<?php echo set_value('password'); ?>" />
                                 </div>
                                 <?php echo $this->form_validation->error('password'); ?>
                             </div>
@@ -119,7 +124,8 @@
                                     <strong><span style="color:red"> * </span>Confirm Password </strong>
                                 </label>
                                 <div>
-                                    <input class="textBoxLogin" type="password" name="conf_password" id="conf_password" value="<?php echo set_value('conf_password'); ?>" />
+                                    <input class="textBoxLogin" type="password" name="conf_password" id="conf_password" 
+                                    value="<?php echo set_value('conf_password'); ?>" />
                                 </div>
                                 <?php echo $this->form_validation->error('conf_password'); ?>
                             </div>
@@ -127,7 +133,8 @@
                             <div class="actions" style="clear: both;">
                                 <div class="right">
                                     <button class="genericBtn" style="margin-left: 158px;">Submit</button>
-                                    <a  href="<?= base_url() ?>users" class="genericBtn" style="height: 18px;padding: 5px;text-align: center;width: 54px;margin-left: 0px;">Back</a>
+                                    <a  href="<?= base_url() ?>users" class="genericBtn" 
+                                    style="height: 18px;padding: 5px;text-align: center;width: 54px;margin-left: 0px;">Back</a>
                                 </div>
 
                             </div>

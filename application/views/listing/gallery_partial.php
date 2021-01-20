@@ -1,8 +1,10 @@
 <div style="margin:0 0 0 49%;">
-    <img src="<?= base_url() . 'assets/images/degree_90.png'; ?>"  title='Rotate 360 Degree' id='rotate_360' >
+    <img src="<?= base_url() . 'assets/images/degree_90.png'; ?>" 
+    title='Rotate 360 Degree' id='rotate_360' >
 </div>
 <div style="margin:28% 0 0 0;float: left">
-    <img src="<?= base_url() . 'assets/images/degree_270.png'; ?>"  title='Rotate 270 Degree' id='rotate_270' >
+    <img src="<?= base_url() . 'assets/images/degree_270.png'; ?>" 
+    title='Rotate 270 Degree' id='rotate_270' >
 </div>
 <div id='gallery'>
     <!--    <a data-lightbox="roadtrip"  class="gallery_1" href="http://localhost/godk/assets/images/data/form-data/users_added1391150786.jpg">
@@ -33,10 +35,12 @@
 </style>
 <div style="margin:0 0 0 48%;">
 
-    <img src="<?= base_url() . 'assets/images/degree_180.png'; ?>"  title='Rotate 180 Degree' id='rotate_180' >
+    <img src="<?= base_url() . 'assets/images/degree_180.png'; ?>"  
+    title='Rotate 180 Degree' id='rotate_180' >
 </div>
 <div style="margin: -34% 0px 0px; float: right">
-    <img src="<?= base_url() . 'assets/images/degree_90.png'; ?>"  title='Rotate 90 Degree' id='rotate_90' >
+    <img src="<?= base_url() . 'assets/images/degree_90.png'; ?>"  
+    title='Rotate 90 Degree' id='rotate_90' >
 </div>
 <script type='text/javascript'>
 

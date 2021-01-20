@@ -40,7 +40,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="text" name="department_name" id="department_name" value="<?php echo set_value('department_name'); ?>" />
+                        <input class="" type="text" name="department_name" id="department_name" 
+                        value="<?php echo set_value('department_name'); ?>" />
                         <?php echo $this->form_validation->error('department_name'); ?>
                     </p>
                 </li>
@@ -52,7 +53,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="text" name="first_name" id="first_name" value="<?php echo set_value('first_name'); ?>" />
+                        <input class="" type="text" name="first_name" id="first_name" 
+                        value="<?php echo set_value('first_name'); ?>" />
                         <?php echo $this->form_validation->error('first_name'); ?>
                     </p>
                 </li>
@@ -64,7 +66,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="text" name="last_name" id="last_name" value="<?php echo set_value('last_name'); ?>" />
+                        <input class="" type="text" name="last_name" id="last_name" 
+                        value="<?php echo set_value('last_name'); ?>" />
                         <?php echo $this->form_validation->error('last_name'); ?>
                     </p>
                 </li>
@@ -76,7 +79,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="text" name="email" id="email" value="<?php echo set_value('email'); ?>" />
+                        <input class="" type="text" name="email" id="email" 
+                        value="<?php echo set_value('email'); ?>" />
                         <?php echo $this->form_validation->error('email'); ?>
                     </p>
                 </li>
@@ -88,7 +92,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="password" name="password" id="password" value="<?php echo set_value('password'); ?>" />
+                        <input class="" type="password" name="password" id="password" 
+                        value="<?php echo set_value('password'); ?>" />
                         <?php echo $this->form_validation->error('password'); ?>
                     </p>
                 </li>
@@ -100,7 +105,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="password" name="conf_password" id="conf_password" value="<?php echo set_value('conf_password'); ?>" />
+                        <input class="" type="password" name="conf_password" id="conf_password" 
+                        value="<?php echo set_value('conf_password'); ?>" />
                         <?php echo $this->form_validation->error('conf_password'); ?>
                     </p>
                 </li>

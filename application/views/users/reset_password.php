@@ -21,7 +21,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="password" name="password" id="password" value="<?php echo set_value('password'); ?>" />
+                        <input class="" type="password" name="password" id="password" 
+                        value="<?php echo set_value('password'); ?>" />
                         <?php echo $this->form_validation->error('password'); ?>
                     </p>
                 </li>
@@ -33,7 +34,8 @@
                     </label>
                     <p>
 
-                        <input class="" type="password" name="conf_password" id="conf_password" value="<?php echo set_value('conf_password'); ?>" />
+                        <input class="" type="password" name="conf_password" id="conf_password" 
+                        value="<?php echo set_value('conf_password'); ?>" />
                         <?php echo $this->form_validation->error('conf_password'); ?>
                     </p>
                 </li>

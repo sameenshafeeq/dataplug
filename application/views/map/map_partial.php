@@ -26,7 +26,8 @@ echo form_open_multipart('form/getMapPartial', 'id=add_data_form');
 
                     if (!empty($form_item[$filter_attribute_value])) {
                         if (!in_array($form_item[$filter_attribute_value], $filter_data)) {
-                            $filter_data = array_merge($filter_data, array($form_item[$filter_attribute_value] => $form_item[$filter_attribute_value]));
+                            $filter_data = array_merge($filter_data,
+                            array($form_item[$filter_attribute_value] => $form_item[$filter_attribute_value]));
                         }
                     }
                 }
@@ -36,7 +37,8 @@ echo form_open_multipart('form/getMapPartial', 'id=add_data_form');
                 echo '<tr><td><strong>';
                 echo 'Filter ' . ucwords(str_replace("_", " ", $filter_attribute_value));
                 echo '</strong></td><td>';
-                echo form_dropdown($filter_attribute_value, $arraylist, $selected, 'id="cat_filter" column_number="' . $column_number . '"') . '</br>';
+                echo form_dropdown($filter_attribute_value, $arraylist, $selected, 
+                'id="cat_filter" column_number="' . $column_number . '"') . '</br>';
                 echo '</td></tr>';
             }
             $exclude_array[] = array_push($exclude_array, $filter_attribute_value);

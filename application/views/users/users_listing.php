@@ -44,7 +44,8 @@
                                                 echo 'Active';
                                             }
                                             ?></span>
-                                        <select id="edit_status_input_<?php echo $user['id']; ?>" class="intxt2 edit_status_box" style="display: none;width: 100%;">
+                                        <select id="edit_status_input_<?php echo $user['id']; ?>" 
+                                        class="intxt2 edit_status_box" style="display: none;width: 100%;">
                                             <option <?php
                                             if ($user['status'] == '0') {
                                                 echo 'selected';
@@ -62,7 +63,8 @@
                             <td class="Links">
                                 <?php if ($this->acl->hasSuperAdmin()) { ?>
                                 <a href="<?= base_url() ?>users/autologin/<?php echo $user['id'] ?>">
-                                    <img src="<?= base_url() ?>assets/images/auto_login.png" alt="" width="24px" title ="Login" />
+                                    <img src="<?= base_url() ?>assets/images/auto_login.png" 
+                                    alt="" width="24px" title ="Login" />
                                 </a>
                                 <?php }?>
                                 <?php if ($this->acl->hasPermission('users', 'edit')) { ?>
@@ -72,16 +74,19 @@
                                 <?php }else{?>
                                 
                                 <a href="javascript:void(0)">
-                                        <img style="visibility: hidden;" src="<?= base_url() ?>assets/images/tableLink3.png" alt="" title="Edit"/>
+                                        <img style="visibility: hidden;" src="<?= base_url() ?>
+                                        assets/images/tableLink3.png" alt="" title="Edit"/>
                                     </a>
                                 <?php }?>
                                 <?php if ($this->acl->hasPermission('users', 'delete')) { ?>
                                 <a href="javascript:void(0)">
-                                    <img src="<?= base_url() ?>assets/images/tableLink3.png" alt="" user_id ="<?= $user['id'] ?>" class="delete_user" title ="Delete user" />
+                                    <img src="<?= base_url() ?>assets/images/tableLink3.png" alt="" 
+                                    user_id ="<?= $user['id'] ?>" class="delete_user" title ="Delete user" />
                                 </a>
                                 <?php }else{?>
                                 <a href="javascript:void(0)">
-                                        <img style="visibility: hidden;" src="<?= base_url() ?>assets/images/tableLink3.png" alt="" title="Delete"/>
+                                        <img style="visibility: hidden;" src="<?= base_url() ?>
+                                        assets/images/tableLink3.png" alt="" title="Delete"/>
                                     </a>
                                 <?php }?>
                                 <br clear="all" />

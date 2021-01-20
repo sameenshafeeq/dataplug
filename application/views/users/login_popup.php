@@ -5,12 +5,16 @@
 
     <div class="loginContent">
         <?php echo form_open('users/login_confirm'); ?>
-        <input type="text" size="20" class="textBoxLogin" id="username" name="username" placeholder="Email"  value="<?php if(isset($_COOKIE['remember_me_username']))echo $_COOKIE['remember_me_username'];else echo ""; ?>"/>
+        <input type="text" size="20" class="textBoxLogin" id="username" name="username" placeholder="Email"  
+        value="<?php if(isset($_COOKIE['remember_me_username']))echo $_COOKIE['remember_me_username'];else echo ""; ?>"/>
         <br/>
-        <input type="password" size="20" class="textBoxLogin" id="passowrd" name="password" placeholder="Password" value="<?php if(isset($_COOKIE['remember_me_password']))echo $_COOKIE['remember_me_password'];else echo ""; ?>" />
+        <input type="password" size="20" class="textBoxLogin" id="passowrd" name="password" placeholder="Password" 
+        value="<?php if(isset($_COOKIE['remember_me_password']))echo $_COOKIE['remember_me_password'];else echo ""; ?>" />
         <br clear="all" />
         <p>
-            <input type="checkbox" class="textBoxLogin" name="remember_me" id="remember_me" <?php if(isset($_COOKIE['remember_me']) && $_COOKIE['remember_me']=='on')echo "checked"; ?> style="margin:2px 4px 0 0;" />
+            <input type="checkbox" class="textBoxLogin" name="remember_me" id="remember_me" 
+            <?php if(isset($_COOKIE['remember_me']) && $_COOKIE['remember_me']=='on')echo "checked"; ?> 
+            style="margin:2px 4px 0 0;" />
             Remember me on this computer
         </p>
         <p>
