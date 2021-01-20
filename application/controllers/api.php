@@ -250,28 +250,28 @@ class Api extends CI_Controller {
         $form_array_final = array(
             'forms' => $form_array
         );
-        $image_array_final = array(
+        $Final_image = array(
             'images' => $image_array
         );
-        $file_array_final = array(
+        $final_array = array(
             'files' => $file_array
         );
-        $app_general_setting = get_app_general_settings($app_id);
+        $App_gen_sett = get_App_gen_setts($app_id);
         $prefrences = array();
-        if(isset($app_general_setting->has_geo_fencing)){
+        if(isset($App_gen_sett->has_geo_fencing)){
             
-            $prefrences['IS_SECURE_APP']=($app_general_setting->secured_apk==1)?'YES':'NO';
-            $prefrences['showHighResOption']=($app_general_setting->high_resolution_image==1)?'YES':'NO';
-            $prefrences['PersistImagesOnDevice']=($app_general_setting->persist_images_on_device==1)?'YES':'NO';
-            $prefrences['BackgroundUpdate']=($app_general_setting->background_update==1)?'YES':'NO';
-            $prefrences['ForceUpdate']=($app_general_setting->force_update==1)?'YES':'NO';
-            $prefrences['EnableAutoTime']=($app_general_setting->enable_auto_time==1)?'YES':'NO';
-            $prefrences['TrackingStatus']=($app_general_setting->tracking_status==1)?'YES':'NO';
-            $prefrences['TrackingInterval']=(isset($app_general_setting->tracking_interval))?$app_general_setting->tracking_interval:'5';
-            $prefrences['TrackingDistance']=(isset($app_general_setting->tracking_distance))?$app_general_setting->tracking_distance:'100';
-            $prefrences['DebugTracking']=(isset($app_general_setting->debug_tracking) && $app_general_setting->debug_tracking == 1)?'YES':'NO';
-            $prefrences['hasGeoFencing']=(isset($app_general_setting->has_geo_fencing) && $app_general_setting->has_geo_fencing == 1)?'YES':'NO';
-            $prefrences['DebugGeoFencing']=(isset($app_general_setting->debug_geo_fencing) && $app_general_setting->debug_geo_fencing == 1)?'YES':'NO';
+            $prefrences['IS_SECURE_APP']=($App_gen_sett->secured_apk==1)?'YES':'NO';
+            $prefrences['showHighResOption']=($App_gen_sett->high_resolution_image==1)?'YES':'NO';
+            $prefrences['PersistImagesOnDevice']=($App_gen_sett->persist_images_on_device==1)?'YES':'NO';
+            $prefrences['BackgroundUpdate']=($App_gen_sett->background_update==1)?'YES':'NO';
+            $prefrences['ForceUpdate']=($App_gen_sett->force_update==1)?'YES':'NO';
+            $prefrences['EnableAutoTime']=($App_gen_sett->enable_auto_time==1)?'YES':'NO';
+            $prefrences['TrackingStatus']=($App_gen_sett->tracking_status==1)?'YES':'NO';
+            $prefrences['TrackingInterval']=(isset($App_gen_sett->tracking_interval))?$App_gen_sett->tracking_interval:'5';
+            $prefrences['TrackingDistance']=(isset($App_gen_sett->tracking_distance))?$App_gen_sett->tracking_distance:'100';
+            $prefrences['DebugTracking']=(isset($App_gen_sett->debug_tracking) && $App_gen_sett->debug_tracking == 1)?'YES':'NO';
+            $prefrences['hasGeoFencing']=(isset($App_gen_sett->has_geo_fencing) && $App_gen_sett->has_geo_fencing == 1)?'YES':'NO';
+            $prefrences['DebugGeoFencing']=(isset($App_gen_sett->debug_geo_fencing) && $App_gen_sett->debug_geo_fencing == 1)?'YES':'NO';
             //Get geoFence from App user table
             $prefrences['geoFence']="[{'lng':74.33375,'lat':31.50282},{'lng':72.32271,'lat':31.49976},{'lng':74.3286,'lat':31.48541},{'lng':74.3474,'lat':30.48577},{'lng':74.33764,'lat':34.5049}]";
             
@@ -280,7 +280,7 @@ class Api extends CI_Controller {
             $prefrences = new stdClass();
         }
         $p = array('preferences' => $prefrences);
-        $form_array_return = array_merge($image_array_final, $form_array_final, $file_array_final,$p);
+        $form_array_return = array_merge($Final_image, $form_array_final, $final_array,$p);
         return $form_array_return;
     }
 
@@ -480,13 +480,13 @@ class Api extends CI_Controller {
 
         //$app_id = $form_info ['app_id'];
         // Temprary block the record sending
-        $app_general_setting = get_app_general_settings($app_id);
+        $App_gen_sett = get_App_gen_setts($app_id);
 
 
         //Minimum version to accept activity
-        if(isset($app_general_setting->minimum_version_to_accept) && $app_general_setting->minimum_version_to_accept != ''){
+        if(isset($App_gen_sett->minimum_version_to_accept) && $App_gen_sett->minimum_version_to_accept != ''){
 
-            if ((float)$version_name < (float)$app_general_setting->minimum_version_to_accept) {
+            if ((float)$version_name < (float)$App_gen_sett->minimum_version_to_accept) {
                 $jsone_array = array(
                     'error' => 'Please refresh the application version, This is old version and not allow to submit data.'
                 );
@@ -498,10 +498,10 @@ class Api extends CI_Controller {
         }
 
 
-        if (isset($app_general_setting->record_stop_sending) && $app_general_setting->record_stop_sending == 1) {
+        if (isset($App_gen_sett->record_stop_sending) && $App_gen_sett->record_stop_sending == 1) {
             $error_message = "Record receiving service currently not available. Record saved localy. Please Try later";
-            if ($app_general_setting->message_stop_sending_record != '') {
-                $error_message = $app_general_setting->message_stop_sending_record;
+            if ($App_gen_sett->message_stop_sending_record != '') {
+                $error_message = $App_gen_sett->message_stop_sending_record;
             }
             $jsone_array = array(
                 'error' => $error_message
@@ -521,7 +521,7 @@ class Api extends CI_Controller {
         
         if($imei_no!==''){
             $authorized = $this->app_model->appuser_imei_already_exist($imei_no, $app_id);
-            if (isset($app_general_setting->only_authorized) && $app_general_setting->only_authorized == 1 && !$authorized) {
+            if (isset($App_gen_sett->only_authorized) && $App_gen_sett->only_authorized == 1 && !$authorized) {
                 $jsone_array = array(
                     'error' => 'You are not authorized'
                 );
@@ -546,7 +546,7 @@ class Api extends CI_Controller {
 
 
         $direct_save = true;
-        if (isset($app_general_setting->direct_save) && $app_general_setting->direct_save == 1)
+        if (isset($App_gen_sett->direct_save) && $App_gen_sett->direct_save == 1)
         {
             $direct_save = false;
         }
@@ -1454,11 +1454,11 @@ class Api extends CI_Controller {
         }
         $app_id = $form_info ['app_id'];
         // Temprary block the record sending
-        $app_general_setting = get_app_general_settings($app_id);
-        if (isset($app_general_setting->record_stop_sending) && $app_general_setting->record_stop_sending == 1) {
+        $App_gen_sett = get_App_gen_setts($app_id);
+        if (isset($App_gen_sett->record_stop_sending) && $App_gen_sett->record_stop_sending == 1) {
             $error_message = "Record receiving service currently not available. Please Try later";
-            if ($app_general_setting->message_stop_sending_record != '') {
-                $error_message = $app_general_setting->message_stop_sending_record;
+            if ($App_gen_sett->message_stop_sending_record != '') {
+                $error_message = $App_gen_sett->message_stop_sending_record;
             }
             $jsone_array = array(
                 'error' => $error_message
@@ -1477,7 +1477,7 @@ class Api extends CI_Controller {
         }
 
         $authorized = $this->app_model->appuser_imei_already_exist($imei_no, $app_id);
-        if ($app_general_setting->only_authorized == 1 && !$authorized) {
+        if ($App_gen_sett->only_authorized == 1 && !$authorized) {
             $jsone_array = array(
                 'error' => 'This IMEI# not authorized to sumbit record'
             );
@@ -1670,11 +1670,11 @@ class Api extends CI_Controller {
         }
         $app_id = $form_info ['app_id'];
         // Temprary block the record sending
-        $app_general_setting = get_app_general_settings($app_id);
-        if (isset($app_general_setting->record_stop_sending) && $app_general_setting->record_stop_sending == 1) {
+        $App_gen_sett = get_App_gen_setts($app_id);
+        if (isset($App_gen_sett->record_stop_sending) && $App_gen_sett->record_stop_sending == 1) {
             $error_message = "Record receiving service currently not available. Please Try later";
-            if ($app_general_setting->message_stop_sending_record != '') {
-                $error_message = $app_general_setting->message_stop_sending_record;
+            if ($App_gen_sett->message_stop_sending_record != '') {
+                $error_message = $App_gen_sett->message_stop_sending_record;
             }
             $jsone_array = array(
                 'error' => $error_message
@@ -1693,7 +1693,7 @@ class Api extends CI_Controller {
         }
 
 /*        $authorized = $this->app_model->appuser_imei_already_exist($imei_no, $app_id);
-        if ($app_general_setting->only_authorized == 1 && !$authorized) {
+        if ($App_gen_sett->only_authorized == 1 && !$authorized) {
             $jsone_array = array(
                 'error' => 'You are not authorized'
             );
