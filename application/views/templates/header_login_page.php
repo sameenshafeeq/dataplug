@@ -3,8 +3,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title><?php echo PLATFORM_NAME;?></title>
-        <link rel="icon"  type="image/png" href="<?= base_url() ?>assets/images/logo-favicon.png" />
-        <link rel="stylesheet" type="text/css" href="<?= base_url() ?>assets/css/style_new.css" />
+        <link rel="icon"  type="image/png" 
+        href="<?= base_url() ?>assets/images/logo-favicon.png" />
+        <link rel="stylesheet" type="text/css"
+         href="<?= base_url() ?>assets/css/style_new.css" />
         <link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
     </head>

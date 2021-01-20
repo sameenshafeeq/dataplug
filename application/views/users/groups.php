@@ -25,7 +25,9 @@
                             <td class="Category"><?php echo $group['name'] ?></td>
                             <td class="Links">
                                 <?php if ($this->acl->hasPermission('groups', 'edit')) { ?>
-                                <a style="color:blue"href="<?= base_url() ?>group-permission/<?php echo $group['id'] ?>" title="Add Group Permissions">Group Permissions</a>
+                                <a style="color:blue"href="<?= base_url() ?>
+                                group-permission/<?php echo $group['id'] ?>" 
+                                title="Add Group Permissions">Group Permissions</a>
                                 <?php }?>
                                 <br clear="all" />
                             </td>

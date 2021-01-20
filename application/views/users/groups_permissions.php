@@ -33,7 +33,11 @@
                                             $checktrue = 'checked="checked"';
                                         ?>
 
-                                        <input type="checkbox" class="permission_chkbox" <?php echo $checktrue; ?> name="<?php echo $module . '[]' ?>" id="<?php echo $module . '_' . $role; ?>" value="<?php echo $role; ?>" /><?php echo ucfirst($role); ?>
+                                        <input type="checkbox" class="permission_chkbox" <?php echo $checktrue; ?>
+                                         name="<?php echo $module . '[]' ?>" 
+                                         id="<?php echo $module . '_' . $role; ?>" 
+                                         value="<?php echo $role; ?>" />
+                                         <?php echo ucfirst($role); ?>
 
                                     </div>
                                     <?php
@@ -48,7 +52,8 @@
                             <div class="actions" style="margin-top: 30px;">
                                 <div class="right">
                                     <button class="genericBtn" name="submitpermission">Submit</button>
-                                    <a  href="<?= base_url() ?>groups" class="genericBtn" style="height: 18px;padding: 5px;text-align: center;width: 54px;">Back</a>
+                                    <a  href="<?= base_url() ?>groups" class="genericBtn"
+                                     style="height: 18px;padding: 5px;text-align: center;width: 54px;">Back</a>
                                 </div>
 
                             </div>
