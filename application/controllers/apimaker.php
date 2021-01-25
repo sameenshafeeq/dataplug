@@ -164,12 +164,12 @@ class Apimaker extends CI_Controller {
                     if($department_id==0) {
                         $department_id = trim($this->input->post('department_id'));
                     }
-                    $apidata = array(
+                    $api_data = array(
                         'title' => $api_title,
                         'secret_key' => $rand_key,
                         'department_id' => $department_id
                     );
-                    $this->db->insert('api', $apidata);
+                    $this->db->insert('api', $api_data);
                     $api_id = $this->db->insert_id();
                     //upload api file   
                     $abs_path = './assets/data/';
@@ -178,9 +178,9 @@ class Apimaker extends CI_Controller {
                     umask($old);
                     if ($_FILES['userfile_addapi']['name'] != '') {
                     	$file_name = preg_replace("/[^A-Za-z0-9\.]/", "_",$_FILES['userfile_addapi']['name']);
-                        $iconName = $api_id.'_'.$file_name;
+                        $icon_name = $api_id.'_'.$file_name;
                         $config['upload_path'] = $abs_path;
-                        $config['file_name'] = $iconName;
+                        $config['file_name'] = $icon_name;
                         $config['overwrite'] = TRUE;
                         $config["allowed_types"] = 'csv';
                         $config["max_size"] = 15360;
@@ -197,7 +197,7 @@ class Apimaker extends CI_Controller {
                     } 
 
                     $change_file = array(
-                        'file_name' => $iconName,
+                        'file_name' => $icon_name,
                     );
                     $this->db->where('id', $api_id);
                     $this->db->update('api', $change_file);
@@ -241,21 +241,21 @@ class Apimaker extends CI_Controller {
                     if($department_id==0) {
                         $department_id = trim($this->input->post('department_id'));
                     }
-                    $apidata = array(
+                    $api_data = array(
                         'title' => $api_title,
                         'department_id' => $department_id,
                     );
                     $this->db->where('id', $api_id);
-                    $this->db->update('api', $apidata);
+                    $this->db->update('api', $api_data);
                     //upload api file   
                     $abs_path = './assets/data/';
                     $old = umask(0);
                     @mkdir($abs_path, 0777);
                     umask($old);
                     if ($_FILES['userfile_addapi']['name'] != '') {
-                        $iconName = $api_id.'_'.$_FILES['userfile_addapi']['name'];
+                        $icon_name = $api_id.'_'.$_FILES['userfile_addapi']['name'];
                         $config['upload_path'] = $abs_path;
-                        $config['file_name'] = $iconName;
+                        $config['file_name'] = $icon_name;
                         $config['overwrite'] = TRUE;
                         $config["allowed_types"] = 'csv';
                         $config["max_size"] = 15360;
@@ -268,7 +268,7 @@ class Apimaker extends CI_Controller {
                             //success
                         }
                         $change_file = array(
-                            'file_name' => $iconName,
+                            'file_name' => $icon_name,
                         );
                         $this->db->where('id', $api_id);
                         $this->db->update('api', $change_file);
